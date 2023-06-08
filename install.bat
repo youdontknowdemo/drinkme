@@ -24,7 +24,7 @@
 :: script often without losing your work.
 :: drinkme.bat is a shortcut to this script:
 ::
-:: https://raw.githubusercontent.com/miklevin/drinkme/main/drinkme.bat
+:: https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/drinkme.bat
 ::                    ___          
 ::                   |   |         _____  
 ::                   |_  |        /     \      
@@ -68,7 +68,7 @@
 :: or any other version you want to install.
 
 :: This is usually acomplished by visiting the URL:
-:: https://raw.githubusercontent.com/miklevin/drinkme/main/install.bat
+:: https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/install.bat
 :: Right-clicking on the page and choosing Save As...
 :: Then, in the Save As dialog, change the Save as
 :: type: to All Files (*.*) and name the file install.bat
@@ -253,18 +253,18 @@ REM This creates "repos" folder in your Windows HOME for Windows/Linux file shar
 if not exist "%USERPROFILE%\repos" mkdir %USERPROFILE%\repos >nul 2>&1
 if not exist "%USERPROFILE%\repos" mkdir %USERPROFILE%\repos >nul 2>&1
 if not exist "%USERPROFILE%\repos\transfer" mkdir %USERPROFILE%\repos\transfer >nul 2>&1
-if not exist "%USERPROFILE%\.wslconfig" curl -sL -o %USERPROFILE%\.wslconfig "https://raw.githubusercontent.com/miklevin/drinkme/main/.wslconfig" >nul 2>&1
+if not exist "%USERPROFILE%\.wslconfig" curl -sL -o %USERPROFILE%\.wslconfig "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/.wslconfig" >nul 2>&1
 if not exist "%USERPROFILE%\.jupyter" mkdir %USERPROFILE%\.jupyter >nul 2>&1
 if not exist "%USERPROFILE%\.config" mkdir %USERPROFILE%\.config >nul 2>&1
-curl -sL -o %USERPROFILE%\repos\transfer\wsl.conf "https://raw.githubusercontent.com/miklevin/drinkme/main/wsl.conf" >nul 2>&1
-curl -sL -o %USERPROFILE%\.config\bash.ico "https://raw.githubusercontent.com/miklevin/drinkme/main/icons/bash.ico" >nul 2>&1
+curl -sL -o %USERPROFILE%\repos\transfer\wsl.conf "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/wsl.conf" >nul 2>&1
+curl -sL -o %USERPROFILE%\.config\bash.ico "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/icons/bash.ico" >nul 2>&1
 
 REM Put the WSL config files in place.
 wsl -d Ubuntu-20.04 -u root cp "/mnt/c/Users/%USERNAME%/repos/transfer/wsl.conf" /etc/wsl.conf
 
 REM If you're running from a location with these optional second-stage install files, copy them over.
-if exist apt_installs.sh (copy apt_installs.sh %USERPROFILE%\repos\transfer > nul 2>&1) else (curl -L -o %USERPROFILE%\repos\transfer\apt_installs.sh "https://raw.githubusercontent.com/miklevin/drinkme/main/apt_installs.sh" > nul 2>&1)
-if exist requirements.txt (copy requirements.txt %USERPROFILE%\repos\transfer > nul 2>&1) else (curl -L -o %USERPROFILE%\repos\transfer\requirements.txt "https://raw.githubusercontent.com/miklevin/drinkme/main/requirements.txt" >nul 2>&1)
+if exist apt_installs.sh (copy apt_installs.sh %USERPROFILE%\repos\transfer > nul 2>&1) else (curl -L -o %USERPROFILE%\repos\transfer\apt_installs.sh "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/apt_installs.sh" > nul 2>&1)
+if exist requirements.txt (copy requirements.txt %USERPROFILE%\repos\transfer > nul 2>&1) else (curl -L -o %USERPROFILE%\repos\transfer\requirements.txt "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/requirements.txt" >nul 2>&1)
 
 REM This stops and restarts like a wsl --shutdown to activate systemd and metadata options.
 wsl -t Ubuntu-20.04 >nul 2>&1
@@ -272,9 +272,9 @@ wsl -t Ubuntu-20.04 >nul 2>&1
 :: Create symbolic links from Windows paths to WSL paths.
 wsl -d Ubuntu-20.04 -e bash -lic "ln -s /mnt/c/Users/%USERNAME%/.ssh/ /home/ubuntu/.ssh && ln -s /mnt/c/Users/%USERNAME%/repos/ /home/ubuntu/repos && ln -s /mnt/c/Users/%USERNAME%/.config/ /home/ubuntu/.config && ln -s /mnt/c/Users/%USERNAME%/.jupyter/ /home/ubuntu/.jupyter" >nul 2>&1
 
-if exist %USERPROFILE%\.vimrc (wsl -d Ubuntu-20.04 -e bash -lic "cp /mnt/c/Users/%USERNAME%/.vimrc /home/ubuntu/" >nul 2>&1) else (curl -L -o %USERPROFILE%\.vimrc "https://raw.githubusercontent.com/miklevin/drinkme/main/.vimrc" >nul 2>&1)
-if exist %USERPROFILE%\.gitconfig (wsl -d Ubuntu-20.04 -e bash -lic "cp /mnt/c/Users/%USERNAME%/.gitconfig /home/ubuntu/" >nul 2>&1) else (curl -L -o %USERPROFILE%\.gitconfig "https://raw.githubusercontent.com/miklevin/drinkme/main/.gitconfig" >nul 2>&1)
-if exist %USERPROFILE%\.pypirc (wsl -d Ubuntu-20.04 -e bash -lic "cp /mnt/c/Users/%USERNAME%/.pypirc /home/ubuntu/" >nul 2>&1) else (curl -L -o %USERPROFILE%\.pypirc "https://raw.githubusercontent.com/miklevin/drinkme/main/.pypirc" >nul 2>&1)
+if exist %USERPROFILE%\.vimrc (wsl -d Ubuntu-20.04 -e bash -lic "cp /mnt/c/Users/%USERNAME%/.vimrc /home/ubuntu/" >nul 2>&1) else (curl -L -o %USERPROFILE%\.vimrc "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/.vimrc" >nul 2>&1)
+if exist %USERPROFILE%\.gitconfig (wsl -d Ubuntu-20.04 -e bash -lic "cp /mnt/c/Users/%USERNAME%/.gitconfig /home/ubuntu/" >nul 2>&1) else (curl -L -o %USERPROFILE%\.gitconfig "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/.gitconfig" >nul 2>&1)
+if exist %USERPROFILE%\.pypirc (wsl -d Ubuntu-20.04 -e bash -lic "cp /mnt/c/Users/%USERNAME%/.pypirc /home/ubuntu/" >nul 2>&1) else (curl -L -o %USERPROFILE%\.pypirc "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/.pypirc" >nul 2>&1)
 
 :: We update the software repository on the Ubuntu 20.04 Machine
 echo  You have plenty of time to look around and wonder what will happen next.
@@ -288,7 +288,7 @@ wsl -d Ubuntu-20.04 -u root -e sudo apt upgrade -y >nul 2>&1
 wsl -d Ubuntu-20.04 -u root /bin/bash -c "echo 'ubuntu	ALL=(ALL:ALL) NOPASSWD:ALL'> /etc/sudoers.d/ubuntu" >nul 2>&1
 
 :: Grab and run second-half of install that runs under WSL and set up Linux graphics.
-wsl -d Ubuntu-20.04 -u ubuntu -e curl -L -o /home/ubuntu/install_wsl.sh "https://raw.githubusercontent.com/miklevin/drinkme/main/install_wsl.sh" >nul 2>&1
+wsl -d Ubuntu-20.04 -u ubuntu -e curl -L -o /home/ubuntu/install_wsl.sh "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/install_wsl.sh" >nul 2>&1
 wsl -d Ubuntu-20.04 -e bash -c "bash /home/ubuntu/install_wsl.sh %version% 2>&1
 
 :: ACLs need a wsl --shutdown for git clone to work. Also keep the WSL session alive.
@@ -298,7 +298,7 @@ wsl -d Ubuntu-20.04 -u ubuntu -e bash -lic "echo .bash_profile called" >nul 2>&1
 
 wsl -d Ubuntu-20.04 -u root -e chmod 600 /home/ubuntu/.ssh/id_rsa_drinkme >nul 2>&1
 wsl -d Ubuntu-20.04 -u root -e chmod 600 /home/ubuntu/.ssh/id_rsa_drinkme.pub >nul 2>&1
-wsl -d Ubuntu-20.04 -u root -e curl -L -o /home/ubuntu/repos/transfer/git_installs.sh "https://raw.githubusercontent.com/miklevin/drinkme/main/git_installs.sh" >nul 2>&1
+wsl -d Ubuntu-20.04 -u root -e curl -L -o /home/ubuntu/repos/transfer/git_installs.sh "https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/git_installs.sh" >nul 2>&1
 wsl -d Ubuntu-20.04 -u root -e sh /home/ubuntu/repos/transfer/git_installs.sh >nul 2>&1
 
 set SCRIPT="%TEMP%\%RANDOM%-%RANDOM%-%RANDOM%-%RANDOM%.vbs"
@@ -327,6 +327,6 @@ echo.
 echo You can reach JupyterLab in a Windows browser at http://localhost:8888
 echo From Microsoft Edge, you can make JupyterLab an app from: .../Apps/Install
 echo You can get a nice JupyterLab icon here, even though edge won't show it:
-echo https://raw.githubusercontent.com/miklevin/drinkme/main/icons/jupyter.ico
+echo https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/icons/jupyter.ico
 echo.
 set /p warning=Press [Enter] to release this console window. %
