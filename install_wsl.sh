@@ -28,20 +28,20 @@ sudo apt autoremove -y > /dev/null 2>&1
 /usr/bin/python$VAR -m venv /home/ubuntu/pyenv > /dev/null 2>&1
 
 # First we get everything that needs to be done under superuser context
-sudo curl -sL https://raw.githubusercontent.com/miklevin/drinkme/main/.bash_profile -o /home/ubuntu/.bash_profile \
-https://raw.githubusercontent.com/miklevin/drinkme/main/.bash_prompt -o /home/ubuntu/.bash_prompt \
-https://raw.githubusercontent.com/miklevin/drinkme/main/.screenrc -o /home/ubuntu/.screenrc \
-https://raw.githubusercontent.com/miklevin/drinkme/main/config -o /home/ubuntu/repos/transfer/configure \
-https://raw.githubusercontent.com/miklevin/drinkme/main/unrot.py -o /home/ubuntu/repos/transfer/unrot.py \
-https://raw.githubusercontent.com/miklevin/drinkme/main/pub.txt -o /home/ubuntu/repos/transfer/pub.txt \
-https://raw.githubusercontent.com/miklevin/drinkme/main/priv.txt -o /home/ubuntu/repos/transfer/priv.txt \
-https://raw.githubusercontent.com/miklevin/drinkme/main/known_hosts -o /home/ubuntu/repos/transfer/known_hosts \
-https://raw.githubusercontent.com/miklevin/drinkme/main/git_installs.sh -o /home/ubuntu/repos/transfer/git_installs.sh \
-https://raw.githubusercontent.com/miklevin/drinkme/main/jupyter.service -o /etc/systemd/system/jupyter.service > /dev/null
+sudo curl -sL https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/.bash_profile -o /home/ubuntu/.bash_profile \
+https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/.bash_prompt -o /home/ubuntu/.bash_prompt \
+https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/.screenrc -o /home/ubuntu/.screenrc \
+https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/config -o /home/ubuntu/repos/transfer/configure \
+https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/unrot.py -o /home/ubuntu/repos/transfer/unrot.py \
+https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/pub.txt -o /home/ubuntu/repos/transfer/pub.txt \
+https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/priv.txt -o /home/ubuntu/repos/transfer/priv.txt \
+https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/known_hosts -o /home/ubuntu/repos/transfer/known_hosts \
+https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/git_installs.sh -o /home/ubuntu/repos/transfer/git_installs.sh \
+https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/jupyter.service -o /etc/systemd/system/jupyter.service > /dev/null
 
 # Then we get everything that needs to be done under the ubuntu user context
-curl -sL https://raw.githubusercontent.com/miklevin/vim/master/all -o /home/ubuntu/pyenv/bin/all > /dev/null 2>&1
-curl -sL https://raw.githubusercontent.com/miklevin/drinkme/main/startjupyter -o /home/ubuntu/pyenv/bin/startjupyter > /dev/null 2>&1
+curl -sL https://raw.githubusercontent.com/youdontknowdemo/vim/master/all -o /home/ubuntu/pyenv/bin/all > /dev/null 2>&1
+curl -sL https://raw.githubusercontent.com/youdontknowdemo/drinkme/main/startjupyter -o /home/ubuntu/pyenv/bin/startjupyter > /dev/null 2>&1
 
 # Give execution context to the scripts
 sudo chmod +x /home/ubuntu/pyenv/bin/startjupyter > /dev/null 2>&1
